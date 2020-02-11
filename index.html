@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Extenal CSS -->
     <link rel="stylesheet" href="https://hdktvd.github.io/alum-jekyll/assets/css/basic_layout.css">
+
+    <style>
+        #inputName:after{
+            content:" *";
+            color: red;
+        }
+    </style>
     
 </head>
 
@@ -128,26 +135,33 @@
     <div class="form-row">
         <div class="form-group col-xs-2"></div>
         <div class="form-group col-md-5">
-            <label for="inputName">Name</label>
-            <input type="text" class="form-control" id="inputName" placeholder="Joe Smith" name="name" required="" autofocus="">
+            <label for="inputName">Name</label><span style="color: red;"> *</span>
+            <input type="text" class="form-control" id="inputName" placeholder="Joe Smith" name="name" required="" autofocus>
         </div>
         <div class="form-group col-md-1"></div>
         <div class="form-group col-md-5">
-            <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="example@email.com" name="emailid" required="">
+            <label for="inputEmail">Email</label><span style="color: red;"> *</span>
+            <input type="email" class="form-control" id="inputEmail" placeholder="example@email.com" name="emailid" required>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-xs-2"></div>
         <div class="form-group col-md-5">
-            <label for="inputId">Transaction Id</label>
-            <input type="text" class="form-control" id="inputId" name="transactId" required="">
+            <label for="inputAdd">Address</label><span style="color: red;"> *</span>
+            <input type="text" class="form-control" id="inputAdd" name="address" required>
         </div>
         <div class="form-group col-md-1"></div>
         <div class="form-group col-md-5">
-            <label for="inputchoice">Donation Towards:</label>
-            <select id="inputchoice" class="form-control" name="choice" required="">
-                <option selected="">Select...</option>
+            <label for="inputId">Transaction Id</label><span style="color: red;"> *</span>
+            <input type="text" class="form-control" id="inputId" name="transactId" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-xs-2"></div>
+        <div class="form-group col-md-5">
+            <label for="inputchoice">Donation Towards:</label><span style="color: red;"> *</span>
+            <select id="inputchoice" class="form-control" name="choice" required>
+                <option disabled selected>Select...</option>
                 <option value="ABADHA">ABADHA</option>
                 <option value="Mavericks">Mavericks</option>
                 <option value="CFR">CFR</option>
@@ -159,22 +173,22 @@
                 <option value="FullSponsorship">Full Sponsorship</option>
             </select>
         </div>
+        <div class="form-group col-md-1"></div>
+        <div class="form-group col-md-5">
+            <label for="inputAmount">Amount</label><span style="color: red;"> *</span>
+            <input type="number" onkeyup="return checkvalid();" class="form-control" id="inputAmount" name="amount" required>
+        </div>
     </div>
     <div class="form-row">
         <div class="form-group col-xs-2"></div>
         <div class="form-group col-md-5">
-            <label for="inputAmount">Amount</label>
-            <input type="number" onkeyup="return checkvalid();" class="form-control" id="inputAmount" name="amount" required="">
-        </div>
-        <div class="form-group col-md-1"></div>
-        <div class="form-group col-md-5">
-            <label for="inputPAN">Pan No <span style="font-weight: 0.7rem;font-size: 0.7rem;">(On amount above
-                    2000)</span></label>
-            <input type="text" class="form-control" id="inputPAN" name="PAN">
+            <label for="inputPAN">Pan No <span style="font-weight: 0.7rem;font-size: 0.7rem;">(On amount above 2000)</span></label><span style="color: red;"> *</span>
+            <input type="text" class="form-control" id="inputPAN" name="PAN" required>
             <p id="errcheck"></p>
         </div>
     </div>
-    <input id="submit" type="submit" class="btn btn-outline-success" value="Sign in" button="">
+    <input id="submit" type="submit" class="btn btn-outline-success" value="Submit" button="">
+    <h6 style="text-align: right;"><span style="color: rgb(253, 130, 130);">Fields marked with '*' is Required</span></h6>
 </form>
 
         <!-- CUSTOM CONTENT ENDS   --------------------------------------------------------------------------------------------------------------------------->
